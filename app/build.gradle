@@ -7,14 +7,11 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.easierphone.storaageapp"
+        applicationId "com.easierphone"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
-        vectorDrawables.useSupportLibrary = true
-        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -33,18 +30,13 @@ android {
 
 dependencies {
 
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-
-    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.exifinterface:exifinterface:1.0.0'
 
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation project(path: ':storage')
 
-    implementation 'com.github.mjdev:libaums:0.5.5'
-
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
